@@ -112,6 +112,7 @@ public class DefaultAnnotationHandlerMapping extends AbstractDetectingUrlHandler
 	protected String[] determineUrlsForHandler(String beanName) {
 		ApplicationContext context = getApplicationContext();
 		Class<?> handlerType = context.getType(beanName);
+		// anniweiya find RequestMapping bean
 		RequestMapping mapping = context.findAnnotationOnBean(beanName, RequestMapping.class);
 		if (mapping != null) {
 			// @RequestMapping found at type level

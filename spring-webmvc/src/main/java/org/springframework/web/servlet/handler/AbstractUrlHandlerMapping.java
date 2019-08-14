@@ -115,6 +115,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 	@Override
 	protected Object getHandlerInternal(HttpServletRequest request) throws Exception {
 		String lookupPath = getUrlPathHelper().getLookupPathForRequest(request);
+		// anniweiya lookup handler
 		Object handler = lookupHandler(lookupPath, request);
 		if (handler == null) {
 			// We need to care for the default handler directly, since we need to
@@ -174,6 +175,7 @@ public abstract class AbstractUrlHandlerMapping extends AbstractHandlerMapping i
 		// Pattern match?
 		List<String> matchingPatterns = new ArrayList<String>();
 		for (String registeredPattern : this.handlerMap.keySet()) {
+		    // anniweiya get path matcher match
 			if (getPathMatcher().match(registeredPattern, urlPath)) {
 				matchingPatterns.add(registeredPattern);
 			}

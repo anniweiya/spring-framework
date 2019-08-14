@@ -937,6 +937,7 @@ public class DispatcherServlet extends FrameworkServlet {
 				multipartRequestParsed = (processedRequest != request);
 
 				// Determine handler for the current request.
+                // anniweiya get handler
 				mappedHandler = getHandler(processedRequest);
 				if (mappedHandler == null || mappedHandler.getHandler() == null) {
 					noHandlerFound(processedRequest, response);
