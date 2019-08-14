@@ -144,7 +144,9 @@ public class InvocableHandlerMethod extends HandlerMethod {
 	private Object[] getMethodArgumentValues(NativeWebRequest request, ModelAndViewContainer mavContainer,
 			Object... providedArgs) throws Exception {
 
+	    // anniweiya the method args
 		MethodParameter[] parameters = getMethodParameters();
+		// anniweiya the method invoke args
 		Object[] args = new Object[parameters.length];
 		for (int i = 0; i < parameters.length; i++) {
 			MethodParameter parameter = parameters[i];
@@ -155,6 +157,7 @@ public class InvocableHandlerMethod extends HandlerMethod {
 			}
 			if (this.argumentResolvers.supportsParameter(parameter)) {
 				try {
+				    // anniweiya resolve argument
 					args[i] = this.argumentResolvers.resolveArgument(
 							parameter, mavContainer, request, this.dataBinderFactory);
 					continue;

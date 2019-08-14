@@ -41,6 +41,7 @@ public class HandlerMethodArgumentResolverComposite implements HandlerMethodArgu
 
 	protected final Log logger = LogFactory.getLog(getClass());
 
+	// anniweiya org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.afterPropertiesSet
 	private final List<HandlerMethodArgumentResolver> argumentResolvers =
 			new LinkedList<HandlerMethodArgumentResolver>();
 
